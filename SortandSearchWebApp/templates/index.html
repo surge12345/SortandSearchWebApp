@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Record Management</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+    
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.5s ease-in-out; /* Animation applied to the container */
+        }
+    
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+    
+        form {
+            margin-top: 20px;
+        }
+    
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+    
+        input[type="text"],
+        input[type="date"],
+        input[type="number"],
+        select {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+    
+        input[type="text"]:focus,
+        input[type="date"]:focus,
+        input[type="number"]:focus,
+        select:focus {
+            border-color: #4caf50;
+
+
+
+        }
+    
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #4caf50;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+    
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    
+        .section {
+            margin-top: 40px;
+        }
+    
+        /* Define fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            color: gray;
+        }
+    </style>
+    
+
+
+</head>
+
+<body>
+
+<div class="container">  
+    <h1>Add Record</h1>
+
+<div class="section">
+    
+
+    
+    <form    action="/submit" method="POST">
+        <label for="Student_ID">Staff ID:</label>
+        <input type="text" id="staff_id" name="staff_id"><br>
+
+        <label for="Name">Name:</label>
+        <input type="text" id="name" name="name"><br>
+
+        <label for="Surname">Surname:</label>
+        <input type="text" id="surname" name="surname"><br>
+
+
+        <label for="dateofbirth">Date of Birth:</label>
+        <input type="date" id="dateofbirth" name="dateofbirth"><br>
+
+        
+        <label for="Address">Address:</label>
+        <input type="text" id="address" name="address"><br>
+
+        <label for="Phone_Number">Phone Number:</label>
+        <input type="number" id="phone" name="phone"><br>
+
+        <label for="Programme">Programme:</label>
+        <input type="text" id="programme" name="programme"><br>
+
+        <label for="Gender">Gender:</label>
+        <input type="text" id="gender" name="gender"><br>
+
+        <label for="Salary">Salary:</label>
+        <input type="text" id="salary" name="salary"><br>
+
+
+        <input style="text-align: center;"   id="submit" type="submit" value="Add Record">
+    </form>
+
+</div>    
+
+    <h1>Sort Records</h1>
+
+<div class="section">
+
+    
+    <form action="/sort_records" method="post">
+        <label for="sort_by">Sort By:</label>
+        <select id="sort_by" name="sort_by">
+            <option value="staff_id">ID</option>
+            <option value="name">Name</option>
+            <option value="surname">Surname</option>
+            <option value="dateofbirth">Date of Birth</option>
+            <option value="addresss">Address</option>
+            <option value="phone">Phone</option>
+            <option value="programme">Programme</option>
+            <option value="gender">Gender</option>
+            <option value="salary">Salary</option>
+        </select>
+        <br> 
+        <label for="sort_algorithm">Sort Method:</label>
+        <select id="sort_algorithm" name="sort_algorithm">
+            <option value="bubble_sort">Bubble Sort</option>
+            <option value="selection_sort">Selection Sort</option>
+            <option value="insertion_sort">Insertion Sort</option>
+            <option value="merge_sort">Merge Sort</option>
+            <option value="quick_sort">Quick Sort</option>
+            
+           
+        </select>
+
+        <br>
+        <label for="order">Order:</label>
+        <select id="order" name="order">
+            <option value="ASC">Ascending</option>
+            <option value="DESC">Descending</option>
+        </select>
+        <br>
+        <input id="submit" type="submit" value="Sort">
+    </form>
+
+</div> 
+
+    <h1>Search Records</h1>
+
+
+<div class="section">
+
+    
+    <form action="/search_records" method="post">
+
+        
+        <label for="search_term">Search Term:</label>
+        <input type="text" id="search_term" name="search_term">
+        <br>
+
+    
+
+
+        <br>
+
+        <label for="search_algorithm">Search Method:</label>
+        <select id="search_algorithm" name="search_algorithm">
+            <option value="linear_search">Linear Search</option>
+            <option value="binary_search">Binary Search</option>
+            
+        
+        </select>
+        <br>
+
+        
+
+
+
+        <input id="submit" type="submit" value="Search">
+    </form>
+
+</div>  
+
+</div>  
+</body>
+</html>
